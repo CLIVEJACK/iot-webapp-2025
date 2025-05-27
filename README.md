@@ -382,6 +382,8 @@
 9. Bootstrap Example의 테마 적용
 10. 전체화면
 
+https://github.com/user-attachments/assets/4b748408-a6c6-425c-966a-09497fa1f784
+
 ## 5일차 
 
 ### ASP.NET Core
