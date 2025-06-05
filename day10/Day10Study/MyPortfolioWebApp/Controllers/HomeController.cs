@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyPortfolioWebApp.Models;
 using System.Diagnostics;
+using System.Net;
+using System.Net.Mail;
 
 namespace MyPortfolioWebApp.Controllers
 {
@@ -40,6 +42,43 @@ namespace MyPortfolioWebApp.Controllers
 
         public IActionResult Contact()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Contact(ContactModel model)
+        {
+            if (ModelState.IsValid) // Model에 들어간 네개 값이 제대로 들어갔으면
+            {
+                try
+                {
+                    var smtpClient = new SmtpClient("smtp.mail.nate.com") // Gmail을 사용하면 
+                    {
+                        Port = 465, // 메일 SMPT 서비스포트 변경필요
+                        Credentials = new NetworkCredential("personar95@gmail.com", "비밀번호"),
+                        EnableSsl = true,
+                    };
+
+                    var mailMessage = new MailMessage
+                    {
+                        From = new MailAddress(model.Email),  // 문의하기에 작성한 메일주소
+                        Subject = model.Subject ?? "[제목없음]",
+                        Body = $"보낸 사람 : {model.Name} ({model.Email})\n\n메시지 : {model.Message}",
+                        IsBodyHtml = false,  // 메일 본문에 HTML태그를 사용여부
+                    };
+
+                    mailMessage.To.Add("personar95@naver.com");  // 받을 메일주소
+
+                    await smtpClient.SendMailAsync(mailMessage); // 위 생성된 메일객체를 전송!
+                    ViewBag.Success = true;
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Success = false;
+                    ViewBag.Error = $"메일전송 실패! {ex.Message}";
+                }                
+            }
+
             return View();
         }
 

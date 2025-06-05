@@ -12,8 +12,8 @@ using MyPortfolioWebApp.Models;
 namespace MyPortfolioWebApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250604075922_InitialIdentity")]
-    partial class InitialIdentity
+    [Migration("20250605010339_InitIdentityAgain2")]
+    partial class InitIdentityAgain2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
