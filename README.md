@@ -936,6 +936,4 @@ https://github.com/user-attachments/assets/542a3abb-6988-4db5-a881-8812ba0234d3
 
 ### AWS 클라우드 업로드
 
-## 11일차 
 
-#### 코딩테스트
