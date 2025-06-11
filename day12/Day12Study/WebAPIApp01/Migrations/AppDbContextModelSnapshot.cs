@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebAPIApp01.Models;
+using WebApiApp01.Models;
 
 #nullable disable
 
-namespace WebAPIApp01.Migrations
+namespace WebApiApp01.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -21,7 +21,7 @@ namespace WebAPIApp01.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("WebAPIApp01.Models.TodoItem", b =>
+            modelBuilder.Entity("WebApiApp01.Models.TodoItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -38,7 +38,7 @@ namespace WebAPIApp01.Migrations
 
                     b.Property<string>("TodoDate")
                         .IsRequired()
-                        .HasColumnType("CHAR(100)");
+                        .HasColumnType("CHAR(8)");
 
                     b.HasKey("Id");
 

@@ -1,8 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
-using WebAPIApp01.Models;
+using WebApiApp01.Models;
 
-namespace WebAPIApp01
+namespace WebApiApp01
 {
     public class Program
     {
