@@ -3,7 +3,7 @@
 SET SESSION cte_max_recursion_depth = 100000;
 
 -- 더미 데이터 삽입 쿼리
-INSERT INTO News (Email, Writer, Title, Contents, PostDate, ReadCount)
+INSERT INTO Board (Email, Writer, Title, Contents, PostDate, ReadCount)
 WITH RECURSIVE cte (n) AS
 (
 SELECT 1
