@@ -1,0 +1,42 @@
+﻿@model MyPortfolioWebApp.Models.Board
+
+@{
+    ViewData["Title"] = "게시글 상세";
+}
+
+<section class="container mt-5">
+    <h2 class="text-secondary fw-bold mb-4 text-center">
+        게시글 상세
+    </h2>
+
+
+    <div class="card shadow p-4 border">
+        <dl class="row mb-0">
+            <dt class="col-sm-3 fw-semibold">E.mail</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-3 fw-semibold">작성자</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Writer)</dd>
+
+            <dt class="col-sm-3 fw-semibold">타이틀</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Title)</dd>
+
+            <dt class="col-sm-3 fw-semibold">내용</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Contents)</dd>
+
+            <dt class="col-sm-3 fw-semibold">작성일</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.PostDate)</dd>
+
+            <dt class="col-sm-3 fw-semibold">조회수</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.ReadCount)</dd>
+        </dl>
+    </div>
+
+    <div class="mt-4 d-flex justify-content-center gap-3">
+        <a asp-action="Index" class="btn btn-outline-secondary px-4 fw-semibold shadow-sm">
+            목록
+        </a>
+    </div>
+
+
+</section>

@@ -1,0 +1,43 @@
+﻿@model MyPortfolioWebApp.Models.Board
+
+@{
+    ViewData["Title"] = "게시글 삭제";
+}
+
+<section class="container mt-5 d-flex justify-content-center">
+    <div class="border bg-white shadow-sm p-4" style="max-width: 700px; width: 100%;">
+        <h4 class="fw-bold text-center text-dark">
+            이 게시글을 삭제하시겠습니까?
+        </h4>
+        <p class="text-muted text-center mb-4">
+            삭제 전에 내용을 꼭 확인해주세요.
+        </p>
+
+
+        <dl class="row">
+            <dt class="col-sm-4 text-end fw-semibold">E.mail</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-4 text-end fw-semibold">작성자</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Writer)</dd>
+
+            <dt class="col-sm-4 text-end fw-semibold">타이틀</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Title)</dd>
+
+            <dt class="col-sm-4 text-end fw-semibold">내용</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Contents)</dd>
+
+            <dt class="col-sm-4 text-end fw-semibold">작성일</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.PostDate)</dd>
+
+            <dt class="col-sm-4 text-end fw-semibold">조회수</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.ReadCount)</dd>
+        </dl>
+
+        <form asp-action="Delete" class="mt-4 d-flex justify-content-center gap-2">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-outline-danger fw-bold">삭제하기</button>
+            <a asp-action="Index" class="btn btn-outline-secondary">목록으로</a>
+        </form>
+    </div>
+</section>

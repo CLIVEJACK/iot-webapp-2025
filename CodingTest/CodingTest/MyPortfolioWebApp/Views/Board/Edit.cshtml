@@ -1,0 +1,57 @@
+﻿@model MyPortfolioWebApp.Models.Board
+
+@{
+    ViewData["Title"] = "게시글 수정";
+}
+
+<section class="container mt-5">
+    <h2 class="text-dark fw-bold mb-4 text-center">
+        게시글 수정
+    </h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form asp-action="Edit" class="p-4 border shadow-sm">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Email" class="form-label fw-semibold small">E.mail</label>
+                        <input asp-for="Email" class="form-control form-control-sm" />
+                        <span asp-validation-for="Email" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Writer" class="form-label fw-semibold small">작성자</label>
+                        <input asp-for="Writer" class="form-control form-control-sm" />
+                        <span asp-validation-for="Writer" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label fw-semibold small">타이틀</label>
+                    <input asp-for="Title" class="form-control form-control-sm" />
+                    <span asp-validation-for="Title" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Contents" class="form-label fw-semibold small">내용</label>
+                    <textarea asp-for="Contents" class="form-control form-control-sm" rows="6"></textarea>
+                    <span asp-validation-for="Contents" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="PostDate" class="form-label fw-semibold small">작성일</label>
+                    <input asp-for="PostDate" class="form-control form-control-sm" />
+                    <span asp-validation-for="PostDate" class="text-danger small"></span>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary px-4 fw-semibold">완료</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary px-4 fw-semibold ms-2">취소</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>

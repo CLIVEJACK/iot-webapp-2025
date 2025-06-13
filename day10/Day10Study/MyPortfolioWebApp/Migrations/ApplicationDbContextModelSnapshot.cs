@@ -210,40 +210,6 @@ namespace MyPortfolioWebApp.Migrations
                     b.ToTable("About");
                 });
 
-            modelBuilder.Entity("MyPortfolioWebApp.Models.Board", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Contents")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime?>("PostDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int?>("ReadCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Writer")
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Board");
-                });
-
             modelBuilder.Entity("MyPortfolioWebApp.Models.CustomUser", b =>
                 {
                     b.Property<string>("Id")
