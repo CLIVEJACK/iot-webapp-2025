@@ -38,7 +38,7 @@
                 <table class="table table-bordered table-hover align-middle text-center">
                     <thead class="table-light">
                         <tr>
-                            <th style="background-color:red">이메일</th>
+                            <th style="background-color:red">E.mail</th>
                             <th style="background-color:Orange">작성자</th>
                             <th style="background-color:yellow">제목</th>
                             <th style="background-color:green">내용</th>
@@ -59,8 +59,8 @@
                                 <td>@item.ReadCount</td>
                                 <td>
                                     <div class="d-flex justify-content-center gap-2">
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm">보기</a>
                                         <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm">수정</a>
-                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm">상세</a>
                                         <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">삭제</a>
                                     </div>
                                 </td>
