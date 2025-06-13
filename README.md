@@ -1279,15 +1279,15 @@ https://github.com/user-attachments/assets/542a3abb-6988-4db5-a881-8812ba0234d3
 
 - 게시판 화면
 
-    <img src="./image/port1.png" width="600">
+    <img src="./image/port1.png" width="800">
 
 - 게시판 검색 화면
 
-    <img src="./image/port2.png" width="600">
+    <img src="./image/port2.png" width="800">
 
 - DB 
 
-    <img src="./image/port3.png" width="600">
+    <img src="./image/port3.png" width="800">
 
 
 
